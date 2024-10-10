@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            document.getElementById('thankYouMessage').style.display = 'block';
+            document.getElementById('feedbackForm').reset(); // Clear the form
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="ThePythonPlaygroundLogo.png" alt="The Python Playground Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Beginner</a>
+                    <div class="dropdown-content">
+                        <a href="intro_to_python.html">Introduction to Python</a>
+                        <a href="basic_syntax.html">Basic Syntax</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Intermediate</a>
+                    <div class="dropdown-content">
+                        <a href="input_output.html">Input/Output</a>
+                        <a href="conditional_statements.html">Conditional Statements</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Advanced</a>
+                    <div class="dropdown-content">
+                        <a href="loops.html">Loops</a>
+                        <a href="functions.html">Functions</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Feedback</h1>
+        <p>Your feedback is valuable! Let me know what you think about the website or the lessons, and feel free to suggest improvements.</p>
+
+        <form id="feedbackForm" onsubmit="handleSubmit(event)">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="message">Feedback:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- "Thank you" message after submission -->
+        <div id="thankYouMessage" style="display:none; margin-top: 20px;">
+            <p>Thank you for your feedback! We'll get back to you soon.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Python Playground. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
